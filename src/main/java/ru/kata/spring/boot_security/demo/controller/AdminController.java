@@ -34,19 +34,19 @@ public class AdminController {
         userService.addUser(user);
         return "redirect:/admin";
     }
-    @PostMapping("/updateUser")//редактирование
+    @PatchMapping("/updateUser")//редактирование
     public String updateUser(@RequestParam("id") Long id, Model model) {
         model.addAttribute("user", userService.getUser(id));
         model.addAttribute("allRoles", roleService.getAllRoles());
         return "update_user";
     }
-    @PostMapping("/updateUserData")
+    @PatchMapping("/updateUserData")
     public String updateUserData(@ModelAttribute("update") User user) {
         userService.updateUser(user);
         return "redirect:/admin";
     }
 
-    @PostMapping("/deleteUser") //удаление
+    @DeleteMapping("/deleteUser") //удаление
     public String deleteUser(@RequestParam("id") Long id) {
         userService.deleteUser(id);
         return "redirect:/admin";

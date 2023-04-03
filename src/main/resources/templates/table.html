@@ -24,12 +24,12 @@
             <li th:utext="${role.name}"></li>
         </th:block></td>
         <td>
-            <form th:method="post" th:action="@{/updateUser}">
+            <form th:method="patch" th:action="@{/updateUser}">
                 <button type="submit" th:name="id" th:value="${user.getId()}">Update</button>
             </form>
         </td>
         <td>
-            <form th:method="post" th:action="@{/deleteUser}">
+            <form th:method="delete" th:action="@{/deleteUser}">
                 <button type="submit" th:name="id" th:value="${user.getId()}">Delete</button>
             </form>
         </td>
